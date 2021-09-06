@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF7625A2-7F6D-44D4-9E0C-930789A9131E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>NewTrainer</RootNamespace>
+    <AssemblyName>NewTrainer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.5.10\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NReco.PhantomJS, Version=1.0.4.0, Culture=neutral, PublicKeyToken=f160d8c5e2ae66b6, processorArchitecture=MSIL">
+      <HintPath>..\packages\NReco.PhantomJS.1.0.4\lib\net40\NReco.PhantomJS.dll</HintPath>
+    </Reference>
+    <Reference Include="Rucaptcha">
+      <HintPath>..\..\marketplaceRuCaptchaNew-\BlackFridayMonitoring\bin\Debug\Rucaptcha.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="xNet">
+      <HintPath>..\..\marketplaceRuCaptchaNew-\BlackFridayMonitoring\bin\Debug\xNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionsAddFriend\ActionAddFriend.cs" />
+    <Compile Include="ActionsAddFriend\AddFriendExecution.cs" />
+    <Compile Include="ActionsGame\ActionInGame.cs" />
+    <Compile Include="ActionShop\ActionShop.cs" />
+    <Compile Include="ActionShop\ShopChecker.cs" />
+    <Compile Include="ActionShop\ShopExecutions.cs" />
+    <Compile Include="ActionsLobby\ActionLobby.cs" />
+    <Compile Include="ActionsMessage\ActionMessage.cs" />
+    <Compile Include="ActionsMessage\MessageChecker.cs" />
+    <Compile Include="ActionsMessage\MessageExecutions.cs" />
+    <Compile Include="ActionUnknown.cs" />
+    <Compile Include="ActionWarBox\ActionWarBox.cs" />
+    <Compile Include="ActionWarBox\WarBoxExecutions.cs" />
+    <Compile Include="AppSettings.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ActionsGame\ActionsWithGameLogic.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="ImageWrapper.cs" />
+    <Compile Include="ActionsGame\InGameActionsLogic.cs" />
+    <Compile Include="ActionsGame\InGameChecker.cs" />
+    <Compile Include="ActionsGame\InGameExecutions.cs" />
+    <Compile Include="Input.cs" />
+    <Compile Include="Launcher.cs" />
+    <Compile Include="ActionsGame\ListOfInGameActions.cs" />
+    <Compile Include="ActionsLobby\LobbyChecker.cs" />
+    <Compile Include="ActionsLobby\LobbyExecution.cs" />
+    <Compile Include="LogMan.cs" />
+    <Compile Include="MainWork.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Requests\ProxyLogic.cs" />
+    <Compile Include="Requests\RequestsLogic.cs" />
+    <Compile Include="Requests\RequestWFLogic.cs" />
+    <Compile Include="SomeActionBase.cs" />
+    <Compile Include="SomeData.cs" />
+    <Compile Include="Testing.cs" />
+    <Compile Include="UserLogic.cs" />
+    <Compile Include="WarBoxesLogic.cs" />
+    <Compile Include="WFDigits.cs" />
+    <Compile Include="WinApi.cs" />
+    <Content Include="..\packages\PhantomJS.2.1.1\tools\phantomjs\phantomjs.exe">
+      <Link>phantomjs.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="phantomjs-license.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
